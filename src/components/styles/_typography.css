@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+/** Typography variables */
+:root {
+  --fontFamily: Roboto, Arial, Helvetica, sans-serif;
+  --fontSize: 13px;
+  --heading1Buff: 9px;
+  --heading2Buff: 7px;
+}

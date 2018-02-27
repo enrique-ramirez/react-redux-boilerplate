@@ -1,0 +1,110 @@
+@import './variables.css';
+
+/**
+ * Global Styles
+ * -------------
+ * Styles for global tags. Thread carefully.
+ */
+
+:global(body) {
+  background: var(--canvasColor);
+}
+
+:global(p) {
+  margin: var(--desktopGutterMini) 0 var(--desktopGutter);
+}
+
+.bodyFont {
+  font-family: var(--fontFamily);
+}
+
+.typography {
+  font-family: var(--fontFamily);
+  font-size: var(--fontSize);
+  line-height: var(--lineHeight);
+}
+
+/** Headings */
+.heading1 {
+  color: var(--textColor);
+  font-family: var(--fontFamily);
+  font-size: calc(var(--fontSize) + var(--heading1Buff));
+  line-height: calc(var(--fontSize) + var(--heading1Buff) + 2px);
+  margin: 6px 0 12px;
+}
+
+.heading2 {
+  color: var(--secondaryTextColor);
+  font-family: var(--fontFamily);
+  font-size: calc(var(--fontSize) + var(--heading2Buff));
+  line-height: calc(var(--fontSize) + var(--heading2Buff) + 2px);
+  margin: 5.5px 0 11px;
+}
+
+/** Colors */
+.textColor {
+  background: var(--textColor);
+}
+
+.secondaryTextColor {
+  background: var(--secondaryTextColor);
+}
+
+.alternateTextColor {
+  background: var(--alternateTextColor);
+}
+
+.primary1Color {
+  background: var(--primary1Color);
+}
+
+.primary2Color {
+  background: var(--primary2Color);
+}
+
+.primary3Color {
+  background: var(--primary3Color);
+}
+
+.accent1Color {
+  background: var(--accent1Color);
+}
+
+.accent2Color {
+  background: var(--accent2Color);
+}
+
+.accent3Color {
+  background: var(--accent3Color);
+}
+
+.accent4Color {
+  background: var(--accent4Color);
+}
+
+.alternate1Color {
+  background: var(--alternate1Color);
+}
+
+.alternate2Color {
+  background: var(--alternate2Color);
+}
+
+.alternate3Color {
+  background: var(--alternate3Color);
+}
+
+.canvasColor {
+  background: var(--canvasColor);
+}
+
+.shadowColor {
+  background: var(--shadowColor);
+}
+
+/** Blocks */
+.code {
+  background: color(var(--accent4Color) a(var(--opacity45)));
+  color: var(--textColor);
+  padding: calc(var(--desktopGutterMini) - 1px) var(--desktopGutterMini);
+}
