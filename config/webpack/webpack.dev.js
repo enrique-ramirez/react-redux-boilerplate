@@ -15,7 +15,6 @@ module.exports = require('./webpack.common')({
   devtool: 'source-map',
 
   entry: [
-    'react-hot-loader/patch',
     `webpack-dev-server/client?http://localhost:${port}`,
     'webpack/hot/only-dev-server',
     path.join(process.cwd(), 'src/app.js'),
