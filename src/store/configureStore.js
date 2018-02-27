@@ -6,13 +6,7 @@ import createSagaMiddleware from 'redux-saga'
 import rootReducer from 'store/reducer'
 import rootSaga from 'store/saga'
 
-// This console.logs an object, not a function.
-console.log(createSagaMiddleware)
-
-// This console.logs the function we want, but only on the browser in development.
-console.log(createSagaMiddleware.default)
-
-const sagaMiddleware = createSagaMiddleware()
+const sagaMiddleware = typeof createSagaMiddleware === 'function' ? createSagaMiddleware() : createSagaMiddleware.default()
 
 const configureStore = (initialState = {}, history) => {
   const middlewares = [
