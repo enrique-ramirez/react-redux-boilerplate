@@ -1,12 +1,9 @@
 const path = require('path')
-const webpack = require('webpack')
 const CircularDependencyPlugin = require('circular-dependency-plugin')
 
 const port = 8080
 
 const plugins = [
-  new webpack.NoEmitOnErrorsPlugin(),
-  new webpack.NamedModulesPlugin(),
   new CircularDependencyPlugin({
     exclude: /a\.js|node_modules/,
     failOnError: false,
@@ -33,6 +30,10 @@ module.exports = require('./webpack.common')({
 
   performance: {
     hints: false,
+  },
+
+  optimization: {
+    noEmitOnErrors: true,
   },
 
   devServer: {
