@@ -6,7 +6,7 @@ import createSagaMiddleware from 'redux-saga'
 import rootReducer from 'store/reducer'
 import rootSaga from 'store/saga'
 
-const sagaMiddleware = typeof createSagaMiddleware === 'function' ? createSagaMiddleware() : createSagaMiddleware.default()
+const sagaMiddleware = createSagaMiddleware()
 
 const configureStore = (initialState = {}, history) => {
   const middlewares = [
