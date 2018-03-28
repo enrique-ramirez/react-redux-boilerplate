@@ -18,6 +18,7 @@ module.exports = {
   moduleDirectories: ['node_modules', 'src'],
   moduleNameMapper: {
     '^.+\\.(css)$': 'identity-obj-proxy',
+    '^.+\\.(jpg|jpeg|png|gif)$': '<rootDir>/config/mocks/fileMock.js',
   },
   setupTestFrameworkScriptFile: './config/setupTests',
   transform: {

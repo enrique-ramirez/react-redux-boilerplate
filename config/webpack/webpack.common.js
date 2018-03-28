@@ -33,6 +33,15 @@ module.exports = options => ({
           'postcss-loader',
         ],
       },
+      {
+        test: /\.(jpg|jpeg|png|gif)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '/images/[name].[hash].[ext]',
+          },
+        },
+      },
     ],
   },
   plugins: options.plugins.concat([
