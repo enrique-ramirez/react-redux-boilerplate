@@ -1,3 +1,15 @@
+import { IntlProvider } from 'react-intl'
+
+import { DEFAULT_LOCALE } from 'store/constants'
+import { translationMessages } from 'i18n'
+
+import messages from './messages'
+
+const { intl: { formatMessage } } = new IntlProvider({
+  locale: DEFAULT_LOCALE,
+  messages: translationMessages,
+}, {}).getChildContext()
+
 // eslint-disable-next-line no-restricted-globals
 const getNumber = value => (isNaN(value) ? null : parseInt(value, 10))
 const getString = value => (typeof value === 'string' ? value : '')
@@ -15,7 +27,7 @@ const memoize = (fn) => {
 }
 
 export const required = memoize(() => value => (
-  getString(value).trim() ? undefined : 'Required field'))
+  getString(value).trim() ? undefined : formatMessage(messages.requiredError)))
 
 export const length = memoize((options = {}) => {
   let {
@@ -32,19 +44,24 @@ export const length = memoize((options = {}) => {
     if (!value) { return undefined }
 
     if (exact !== null && value.length !== exact) {
-      return `Wrong length. Should be ${exact} characters long.`
+      return formatMessage(messages.lengthErrorExact, { number: exact })
     }
 
     if (max !== null && value.length > max) {
-      return `Wrong length. Should be less than ${max} characters long.`
+      return formatMessage(messages.lengthErrorMax, { number: max })
     }
 
     if (min !== null && value.length < min) {
-      return `Wrong length. Should be longer than ${min} characters long.`
+      return formatMessage(messages.lengthErrorMin, { number: min })
     }
 
     return undefined
   }
+})
+
+export const email = memoize(() => (value) => {
+  const regex = /(.+)@(.+){2,}\.(.+){2,}/
+  return regex.test(value) ? undefined : formatMessage(messages.emailError)
 })
 
 export const makeValidate = validations => (values) => {
