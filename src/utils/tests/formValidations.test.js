@@ -2,6 +2,7 @@ import { Map } from 'immutable'
 import {
   required,
   length,
+  email,
   makeValidate,
 } from 'utils/formValidations'
 
