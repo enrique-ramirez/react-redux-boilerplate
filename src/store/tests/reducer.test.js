@@ -35,6 +35,114 @@ describe('rootReducer', () => {
         }),
       }).getIn(['entities', 'todos']).size).toEqual(1)
     })
+
+    it('should replace entities objects, not merge them', () => {
+      const initialState = fromJS({
+        entities: {
+          users: {
+            '1abc': {
+              id: '1abc',
+              name: 'James',
+              email: 'james@domain.com',
+              _links: {
+                get: '/user/1abc',
+                put: '/user/1abc',
+              },
+            },
+            '2abc': {
+              id: '2abc',
+              name: 'Watson',
+              email: 'watson@domain.com',
+              _links: {
+                get: '/user/2abc',
+                put: '/user/2abc',
+              },
+            },
+          },
+          categories: {
+            '1dfg': {
+              name: 'Movies',
+              _links: {
+                get: '/categories/1dfg',
+              },
+            },
+            '2dfg': {
+              name: 'Music',
+              _links: {
+                get: '/categories/2dfg',
+                put: '/categories/2dfg',
+              },
+            },
+          },
+        },
+      })
+
+      const updatedEntities = fromJS({
+        users: {
+          '2abc': {
+            id: '2abc',
+            name: 'Watson',
+            _links: {
+              get: '/user/2abc',
+            },
+          },
+        },
+        categories: {
+          '1dfg': {
+            name: 'Movies',
+            _links: {
+              get: '/categories/1dfg',
+              put: '/categories/1dfg',
+              post: '/categories/1dfg',
+            },
+          },
+        },
+      })
+
+      const expectedResult = fromJS({
+        users: {
+          '1abc': {
+            id: '1abc',
+            name: 'James',
+            email: 'james@domain.com',
+            _links: {
+              get: '/user/1abc',
+              put: '/user/1abc',
+            },
+          },
+          '2abc': {
+            id: '2abc',
+            name: 'Watson',
+            _links: {
+              get: '/user/2abc',
+            },
+          },
+        },
+        categories: {
+          '1dfg': {
+            name: 'Movies',
+            _links: {
+              get: '/categories/1dfg',
+              put: '/categories/1dfg',
+              post: '/categories/1dfg',
+            },
+          },
+          '2dfg': {
+            name: 'Music',
+            _links: {
+              get: '/categories/2dfg',
+              put: '/categories/2dfg',
+            },
+          },
+        },
+      })
+
+      expect(rootReducer(initialState, {
+        type: 'SOMEACTION',
+        payload: fromJS({}),
+        entities: updatedEntities,
+      }).get('entities')).toEqual(expectedResult)
+    })
   })
 
   describe('form reducer', () => {
