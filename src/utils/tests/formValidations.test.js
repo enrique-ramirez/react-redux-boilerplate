@@ -37,6 +37,21 @@ describe('formValidations', () => {
     })
   })
 
+  describe('email', () => {
+    it('should validate emails', () => {
+      expect(email()('')).not.toEqual(undefined)
+      expect(email()('marioBros')).not.toEqual(undefined)
+      expect(email()('marioBros@mushroom')).not.toEqual(undefined)
+      expect(email()('name@@domain.com')).not.toEqual(undefined)
+      expect(email()('name:@domain.com')).not.toEqual(undefined)
+      expect(email()('name bla@domain.com')).not.toEqual(undefined)
+      expect(email()('marioBros@mushroomKingdom.com')).toEqual(undefined)
+      expect(email()('name+1234@domain.com')).toEqual(undefined)
+      expect(email()('name.1234@domain.com')).toEqual(undefined)
+      expect(email()('name.1234@domain.com.mx')).toEqual(undefined)
+    })
+  })
+
   describe('makeValidate', () => {
     it('should be able to create a proper validate function', () => {
       const validate = makeValidate({

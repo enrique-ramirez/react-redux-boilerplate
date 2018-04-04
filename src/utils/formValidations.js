@@ -60,7 +60,7 @@ export const length = memoize((options = {}) => {
 })
 
 export const email = memoize(() => (value) => {
-  const regex = /(.+)@(.+){2,}\.(.+){2,}/
+  const regex = /^([^@:\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
   return regex.test(value) ? undefined : formatMessage(messages.emailError)
 })
 
