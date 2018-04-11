@@ -18,7 +18,7 @@
     "max-empty-lines": 2,
     "media-feature-name-no-vendor-prefix": true,
     "no-missing-end-of-source-newline": 2,
-    "order/properties-order": [["composes"], {unspecified: "bottomAlphabetical"}],
+    "order/properties-order": [["composes"], {"unspecified": "bottomAlphabetical"}],
     "plugin/declaration-block-no-ignored-properties": true,
     "property-no-unknown": [ true, {
       "ignoreProperties": ["composes"]
