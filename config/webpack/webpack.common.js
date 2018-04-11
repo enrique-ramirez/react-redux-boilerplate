@@ -34,13 +34,19 @@ module.exports = options => ({
         ],
       },
       {
-        test: /\.(jpg|jpeg|png|gif)$/,
-        use: {
+        test: /\.(jpg|jpeg|png|gif|svg)$/,
+        use: [{
           loader: 'file-loader',
           options: {
-            name: '/images/[name].[hash].[ext]',
+            name: './images/[name].[hash].[ext]',
           },
         },
+        {
+          loader: 'image-webpack-loader',
+          options: {
+            bypassOnDebug: true,
+          },
+        }],
       },
     ],
   },
