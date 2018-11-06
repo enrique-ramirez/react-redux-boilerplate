@@ -21,8 +21,5 @@ module.exports = {
     '^.+\\.(jpg|jpeg|png|gif)$': '<rootDir>/config/mocks/fileMock.js',
   },
   setupTestFrameworkScriptFile: './config/setupTests',
-  transform: {
-    '^.+\\.jsx?$': 'babel-jest',
-  },
   verbose: true,
 }

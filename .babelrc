@@ -1,7 +1,7 @@
 {
-  "presets": ["react", ["env"]],
+  "presets": ["@babel/preset-react", ["@babel/preset-env"]],
   "plugins": [
-    "transform-object-rest-spread",
+    "@babel/plugin-proposal-object-rest-spread",
     "react-hot-loader/babel",
     ["react-intl-auto", {
       "removePrefix": "src",
@@ -21,7 +21,12 @@
       "comments": false
     },
     "test": {
-      "presets": ["react", ["env", { "modules": "commonjs" }]]
+      "presets": [
+        "@babel/preset-react",
+        ["@babel/preset-env", {
+          "modules": "commonjs"
+        }]
+      ]
     }
   }
 }

@@ -14,11 +14,10 @@ const configureStore = (initialState = {}, history) => {
     routerMiddleware(history),
   ]
 
-  const composeEnhancers =
-    typeof window === 'object' &&
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-      ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ serialize: true })
-      : compose
+  const composeEnhancers = typeof window === 'object'
+    && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ serialize: true })
+    : compose
 
   const store = createStore(
     rootReducer,

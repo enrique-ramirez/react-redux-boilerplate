@@ -84,10 +84,10 @@ Input.propTypes = {
   meta: PropTypes.shape({
     /** true if field has focus. Only works if input.onFocus was passed. */
     active: PropTypes.bool,
-    /** true if this field was set with AUTOFILL action and has not since been changed. */
-    autofilled: PropTypes.bool,
     /** true if the form is currently running async validation because this field was blurred. */
     asyncValidating: PropTypes.bool,
+    /** true if this field was set with AUTOFILL action and has not since been changed. */
+    autofilled: PropTypes.bool,
     /** true if the field value has changed from its initialized value. Opposite of pristine. */
     dirty: PropTypes.bool,
     /** Store's dispatch function. */
@@ -100,10 +100,10 @@ Input.propTypes = {
     invalid: PropTypes.bool,
     /** true if field value is the same as its initialized value. Opposite of dirty. */
     pristine: PropTypes.bool,
-    /** true if field is currently being submitted. */
-    submitting: PropTypes.bool,
     /** true if the form had onSubmit called and failed to submit for any reason. */
     submitFailed: PropTypes.bool,
+    /** true if field is currently being submitted. */
+    submitting: PropTypes.bool,
     /** true if field has been touched. By default, this is set to true when field is blurred. */
     touched: PropTypes.bool,
     /** true if field's value passes validation. Opposite of invalid. */

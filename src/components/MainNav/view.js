@@ -45,5 +45,4 @@ MainNav.propTypes = {
   filter: PropTypes.oneOf(['active', 'done']),
 }
 
-
 export default MainNav
