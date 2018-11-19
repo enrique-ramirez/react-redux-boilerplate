@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import { fromJS } from 'immutable'
-import { routerMiddleware } from 'react-router-redux'
+import { routerMiddleware } from 'connected-react-router/immutable'
 import createSagaMiddleware from 'redux-saga'
 
-import rootReducer from 'store/reducer'
+import createRootReducer from 'store/reducer'
 import rootSaga from 'store/saga'
 
 const sagaMiddleware = createSagaMiddleware()
@@ -20,7 +20,7 @@ const configureStore = (initialState = {}, history) => {
     : compose
 
   const store = createStore(
-    rootReducer,
+    createRootReducer(history),
     fromJS(initialState),
     composeEnhancers(applyMiddleware(...middlewares)),
   )

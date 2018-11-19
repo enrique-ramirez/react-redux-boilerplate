@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom'
 import createHistory from 'history/createBrowserHistory'
 import { AppContainer } from 'react-hot-loader'
 import { Provider } from 'react-redux'
-import { ConnectedRouter } from 'react-router-redux'
+import { ConnectedRouter } from 'connected-react-router/immutable'
 
 import App from 'modules/App'
 import LanguageProvider from 'modules/LanguageProvider'

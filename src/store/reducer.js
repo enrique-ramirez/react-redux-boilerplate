@@ -1,5 +1,5 @@
 import { reducer as formReducer } from 'redux-form/immutable'
-import { routerReducer } from 'react-router-redux'
+import { connectRouter } from 'connected-react-router/immutable'
 import { combineReducers } from 'redux-immutable'
 import { Map, fromJS } from 'immutable'
 
@@ -53,11 +53,11 @@ const form = formReducer.plugin({
 /* UI Reducer */
 
 /* Root Reducer */
-const rootReducer = combineReducers({
+const createRootReducer = history => combineReducers({
   entities,
   resources,
   form,
-  router: routerReducer,
+  router: connectRouter(history),
 })
 
-export default rootReducer
+export default createRootReducer

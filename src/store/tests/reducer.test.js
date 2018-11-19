@@ -1,10 +1,14 @@
 import * as matchers from 'jest-immutable-matchers'
 import { fromJS } from 'immutable'
+import createHistory from 'history/createBrowserHistory'
 
 import { ADD_TODO } from 'modules/ToDos/duck'
-import rootReducer, { clearReduxForm } from 'store/reducer'
+import createRootReducer, { clearReduxForm } from 'store/reducer'
 
 describe('rootReducer', () => {
+  const history = createHistory()
+  const rootReducer = createRootReducer(history)
+
   beforeAll(() => {
     jest.addMatchers(matchers)
   })
