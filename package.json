@@ -1,13 +1,13 @@
 {
-  "name": "@wepow/janus",
+  "name": "@reactreduxboilerplate",
   "version": "0.0.1",
-  "description": "React and redux starter pack for Wepow applications",
+  "description": "React and redux starter pack",
   "author": "Enrique Ramírez <me@enrique-ramirez.com>",
   "private": true,
   "license": "UNLICENSED",
-  "homepage": "https://github.com/wepow/janus#readme",
+  "homepage": "https://github.com/enrique-ramirez/react-redux-boilerplate#readme",
   "bugs": {
-    "url": "https://github.com/wepow/janus/issues"
+    "url": "https://github.com/enrique-ramirez/react-redux-boilerplate/issues"
   },
   "main": "index.js",
   "directories": {
@@ -31,12 +31,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:wepow/janus.git"
+    "url": "git@github.com:enrique-ramirez/react-redux-boilerplate.git"
   },
   "keywords": [
     "React",
     "Redux",
-    "Wepow",
     "boilerplate",
     "starter"
   ],
