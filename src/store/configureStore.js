@@ -2,13 +2,14 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import { fromJS } from 'immutable'
 import { routerMiddleware } from 'connected-react-router/immutable'
 import createSagaMiddleware from 'redux-saga'
+import createHistory from 'history/createBrowserHistory'
 
 import createRootReducer from 'store/reducer'
 import rootSaga from 'store/saga'
 
 const sagaMiddleware = createSagaMiddleware()
 
-const configureStore = (initialState = {}, history) => {
+const configureStore = (initialState = {}, history = createHistory()) => {
   const middlewares = [
     sagaMiddleware,
     routerMiddleware(history),

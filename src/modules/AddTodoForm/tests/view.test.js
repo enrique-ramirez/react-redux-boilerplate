@@ -1,5 +1,6 @@
 import React from 'react'
 import { shallowWithIntl } from 'utils/intl-enzyme'
+import { Field } from 'redux-form/immutable'
 
 import AddTodoForm from 'modules/AddTodoForm/view'
 
@@ -8,7 +9,7 @@ describe('<AddTodoForm />', () => {
     const wrapper = shallowWithIntl(<AddTodoForm intl={{}} />)
 
     expect(wrapper.find('form')).toHaveLength(1)
-    expect(wrapper.find('Field')).toHaveLength(2)
+    expect(wrapper.find(Field)).toHaveLength(2)
   })
 
   it('should handle onSubmit', () => {
