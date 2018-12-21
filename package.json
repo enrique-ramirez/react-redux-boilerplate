@@ -1,5 +1,5 @@
 {
-  "name": "@reactreduxboilerplate",
+  "name": "react-redux-boilerplate",
   "version": "0.0.1",
   "description": "React and redux starter pack",
   "author": "Enrique Ramírez <me@enrique-ramirez.com>",
@@ -14,15 +14,15 @@
     "lib": "./src"
   },
   "scripts": {
-    "prebuild": "rimraf dist && yarn lint && yarn test",
+    "prebuild": "rimraf dist && npm run lint && npm run test",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack/webpack.prod.js",
     "start:dev": "cross-env NODE_ENV=development webpack-dev-server --hot --config config/webpack/webpack.dev.js",
     "start:storybook": "start-storybook -p 9001 -c .storybook",
     "start:server": "node server.js",
     "lint": "eslint src/**/*.js && stylelint src/**/*.css",
-    "precommit": "lint-staged && yarn test",
+    "precommit": "lint-staged && npm run test",
     "test": "jest",
-    "test:watch": "yarn test --watch",
+    "test:watch": "npm run test --watch",
     "locales:extract": "babel-node ./scripts/translations/extract.js"
   },
   "lint-staged": {
