@@ -1,3 +1,5 @@
+@import '../styles/variables.css';
+
 .mainNav {
   list-style: none;
   margin: 0;
@@ -5,15 +7,20 @@
 }
 
 .mainNav li {
+  border-right: 1px solid transparent;
   padding: 0;
   text-align: center;
 }
 
+.mainNav li:last-child {
+  border: 0;
+}
+
 .mainNav a,
 .mainNav strong {
-  background: #eee;
+  background: color-mod(var(--primary3Color) alpha(var(--opacity10)));
   border-radius: 5px 5px 0 0;
-  color: #bbb;
+  color: color-mod(var(--primary2Color) alpha(var(--opacity25)));
   display: block;
   font-weight: bold;
   padding: 1em 0;
@@ -21,7 +28,7 @@
 }
 
 .mainNav strong {
-  background: #fff;
+  background: var(--alternate3Color);
   border-bottom: 0;
-  color: #0c7ce1;
+  color: var(--accent1Color);
 }

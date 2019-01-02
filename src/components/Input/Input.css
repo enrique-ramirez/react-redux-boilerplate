@@ -12,9 +12,8 @@
 }
 
 .input {
-  composes: typography from '../styles/theme.css';
-  background: color(var(--canvasColor) a(var(--opacity70)));
-  border: 1px solid color(var(--canvasColor));
+  background: color-mod(var(--canvasColor) alpha(var(--opacity70)));
+  border: 1px solid color-mod(var(--canvasColor));
   border-radius: var(--borderRadius);
   box-sizing: border-box;
   color: var(--textColor);
@@ -27,19 +26,19 @@
 }
 
 .input:hover {
-  border: 1px solid color(var(--primary3Color) a(var(--opacity45)));
+  border: 1px solid color-mod(var(--primary3Color) alpha(var(--opacity45)));
 }
 
 .input:focus {
-  background: color(var(--alternateTextColor));
-  border: 1px solid color(var(--primary3Color));
-  box-shadow: 0 0 0 4px color(var(--primary3Color) a(var(--opacity25))) inset;
+  background: color-mod(var(--alternateTextColor));
+  border: 1px solid color-mod(var(--primary3Color));
+  box-shadow: 0 0 0 4px color-mod(var(--primary3Color) alpha(var(--opacity25))) inset;
   color: var(--textColor);
   outline: none;
 }
 
 .input::placeholder {
-  color: color(var(--primary2Color) a(var(--opacity25)));
+  color: color-mod(var(--primary2Color) alpha(var(--opacity25)));
 }
 
 /* Disabled */
@@ -65,7 +64,7 @@
  * The different kinds of inputs.
  */
 .dark {
-  background: color(var(--primary3Color) a(var(--opacity14)));
+  background: color-mod(var(--primary3Color) alpha(var(--opacity14)));
   color: var(--textColor);
 }
 
@@ -83,11 +82,10 @@
 
 .error:focus {
   border-color: var(--accent3Color);
-  box-shadow: 0 0 0 4px color(var(--accent3Color) a(var(--opacity25))) inset;
+  box-shadow: 0 0 0 4px color-mod(var(--accent3Color) alpha(var(--opacity25))) inset;
 }
 
 .errorMessage {
-  composes: typography from '../styles/theme.css';
   border-collapse: separate;
   color: var(--accent3Color);
   font-size: 13px;

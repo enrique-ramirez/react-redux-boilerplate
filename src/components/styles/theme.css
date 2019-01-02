@@ -8,20 +8,13 @@
 
 :global(body) {
   background: var(--canvasColor);
+  font-family: var(--fontFamily);
+  font-size: var(--fontSize);
+  line-height: var(--lineHeight);
 }
 
 :global(p) {
   margin: var(--desktopGutterMini) 0 var(--desktopGutter);
-}
-
-.bodyFont {
-  font-family: var(--fontFamily);
-}
-
-.typography {
-  font-family: var(--fontFamily);
-  font-size: var(--fontSize);
-  line-height: var(--lineHeight);
 }
 
 /** Headings */
@@ -104,7 +97,7 @@
 
 /** Blocks */
 .code {
-  background: color(var(--accent4Color) a(var(--opacity45)));
+  background: color-mode(var(--accent4Color) alpha(var(--opacity45)));
   color: var(--textColor);
   padding: calc(var(--desktopGutterMini) - 1px) var(--desktopGutterMini);
 }

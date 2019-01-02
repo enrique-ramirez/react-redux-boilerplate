@@ -59,10 +59,10 @@
 }
 
 .disabled span {
-  background: color(var(--primary3Color) a(var(--opacity25)));
-  border-color: color(var(--primary3Color) a(var(--opacity25)));
+  background: color-mod(var(--primary3Color) alpha(var(--opacity25)));
+  border-color: color-mod(var(--primary3Color) alpha(var(--opacity25)));
 }
 
 .disabled svg {
-  fill: color(var(--primary3Color) a(var(--opacity45)));
+  fill: color-mod(var(--primary3Color) alpha(var(--opacity45)));
 }

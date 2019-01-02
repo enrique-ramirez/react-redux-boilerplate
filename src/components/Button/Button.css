@@ -7,9 +7,8 @@
  * This is the base for each kind.
  */
 .button {
-  composes: typography from '../styles/theme.css';
-  background: color(var(--alternate2Color) a(var(--opacity10)));
-  border: 1px solid color(var(--alternate2Color) a(var(--opacity25)));
+  background: color-mod(var(--alternate2Color) alpha(var(--opacity10)));
+  border: 1px solid color-mod(var(--alternate2Color) alpha(var(--opacity25)));
   border-radius: var(--borderRadius);
   box-sizing: border-box;
   color: var(--alternate1Color);
@@ -35,13 +34,13 @@
 }
 
 .button:hover {
-  box-shadow: 0 2px 2px color(var(--shadowColor) a(var(--opacity10)));
+  box-shadow: 0 2px 2px color-mod(var(--shadowColor) alpha(var(--opacity10)));
 }
 
 /* Disabled */
 .button[disabled],
 .button[disabled]:hover {
-  background: color(var(--alternate2Color) a(var(--opacity10)));
+  background: color-mod(var(--alternate2Color) alpha(var(--opacity10)));
   border: 0;
   box-shadow: none;
   color: var(--primary3Color);
@@ -88,7 +87,7 @@ a.button[disabled] {
 /* Primary */
 .primary {
   background: var(--accent2Color);
-  border-color: color(var(--shadowColor) a(var(--opacity10)));
+  border-color: color-mod(var(--shadowColor) alpha(var(--opacity10)));
   color: var(--alternateTextColor);
 }
 
@@ -100,7 +99,7 @@ a.button[disabled] {
 /* Secondary */
 .secondary {
   background: var(--accent1Color);
-  border-color: color(var(--shadowColor) a(var(--opacity10)));
+  border-color: color-mod(var(--shadowColor) alpha(var(--opacity10)));
   color: var(--alternateTextColor);
 }
 
@@ -117,19 +116,19 @@ a.button[disabled] {
 }
 
 .flat:hover {
-  background: color(var(--alternate2Color) a(var(--opacity14)));
+  background: color-mod(var(--alternate2Color) alpha(var(--opacity14)));
   box-shadow: none;
 }
 
 .flat.working {
-  border: 1px solid color(var(--alternate2Color) a(var(--opacity25)));
+  border: 1px solid color-mod(var(--alternate2Color) alpha(var(--opacity25)));
   border-right: 1px solid transparent;
 }
 
 /* Destructive */
 .destructive {
   background: var(--accent3Color);
-  border-color: color(var(--shadowColor) a(var(--opacity10)));
+  border-color: color-mod(var(--shadowColor) alpha(var(--opacity10)));
   color: var(--alternateTextColor);
 }
 
@@ -142,7 +141,7 @@ a.button[disabled] {
 .warning {
   background: var(--accent4Color);
   border-color: var(--accent4Color);
-  color: color(var(--shadowColor) a(var(--opacity45)));
+  color: color-mod(var(--shadowColor) alpha(var(--opacity45)));
 }
 
 .warning.working {
@@ -161,7 +160,7 @@ a.button[disabled] {
   animation: spinner 0.7s linear infinite;
   animation-delay: 0.3s;
   background: transparent;
-  border-color: color(var(--shadowColor) a(var(--opacity25)));
+  border-color: color-mod(var(--shadowColor) alpha(var(--opacity25)));
   border-radius: var(--componentHeight);
   border-right: 1px solid transparent;
   padding: 0;
