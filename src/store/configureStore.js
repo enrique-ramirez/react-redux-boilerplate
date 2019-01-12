@@ -9,7 +9,10 @@ import rootSaga from 'store/saga'
 
 const sagaMiddleware = createSagaMiddleware()
 
-const configureStore = (initialState = {}, history = createHistory()) => {
+const configureStore = (
+  initialState = {},
+  history = createHistory(),
+) => {
   const middlewares = [
     sagaMiddleware,
     routerMiddleware(history),

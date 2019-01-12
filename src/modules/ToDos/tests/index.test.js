@@ -1,12 +1,13 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import configureStore from 'redux-mock-store'
-import { shallow, mount } from 'enzyme'
 import { fromJS } from 'immutable'
+import configureStore from 'redux-mock-store'
+import { Provider } from 'react-redux'
+import { mount } from 'enzyme'
 import { MemoryRouter } from 'react-router-dom'
 import { IntlProvider } from 'react-intl'
 
 import ConnectedToDos from 'modules/ToDos'
+import ToDos from 'modules/ToDos/view'
 
 describe('Connected <ToDos />', () => {
   const initialState = fromJS({
@@ -20,31 +21,40 @@ describe('Connected <ToDos />', () => {
     },
   })
 
-  let mockStore
   let store
+  let mockStore
 
-  beforeAll(() => {
+  beforeEach(() => {
     mockStore = configureStore([])
     store = mockStore(initialState)
   })
 
   it('props should match mapStateToProps', () => {
-    const wrapper = shallow(<ConnectedToDos store={store} />)
+    const wrapper = mount(
+      <Provider store={store}>
+        <IntlProvider locale="en" messages={{ en: {} }}>
+          <MemoryRouter>
+            <ConnectedToDos />
+          </MemoryRouter>
+        </IntlProvider>
+      </Provider>,
+      {},
+    )
+    const props = wrapper.find(ToDos).props()
 
-    expect(wrapper.prop('todos')).toEqual(initialState.getIn(['resources', 'todos']))
+    expect(props.todos).toEqual(initialState.getIn(['resources', 'todos']))
   })
 
   it('props should match mapDispatchToProps', () => {
     const wrapper = mount(
-      <IntlProvider locale="en" messages={{ en: {} }}>
-        <MemoryRouter>
-          <ConnectedToDos />
-        </MemoryRouter>
-      </IntlProvider>,
-      {
-        context: { store },
-        childContextTypes: { store: PropTypes.object.isRequired },
-      },
+      <Provider store={store}>
+        <IntlProvider locale="en" messages={{ en: {} }}>
+          <MemoryRouter>
+            <ConnectedToDos />
+          </MemoryRouter>
+        </IntlProvider>
+      </Provider>,
+      {},
     )
 
     wrapper.find('input[type="checkbox"]').first().simulate('change')

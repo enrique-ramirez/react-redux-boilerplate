@@ -1,9 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
 import { mount } from 'enzyme'
 import { fromJS } from 'immutable'
-import { FormattedMessage, defineMessages } from 'react-intl'
+import { IntlProvider, FormattedMessage, defineMessages } from 'react-intl'
 
 import ConnectedLanguageProvider from 'modules/LanguageProvider'
 
@@ -31,13 +31,14 @@ describe('Connected <LanguageProvider />', () => {
 
   it('should render the default language messages', () => {
     const wrapper = mount(
-      <ConnectedLanguageProvider locale="en" messages={messages}>
-        <FormattedMessage {...messages.someText} />
-      </ConnectedLanguageProvider>,
-      {
-        context: { store },
-        childContextTypes: { store: PropTypes.object.isRequired },
-      },
+      <Provider store={store}>
+        <IntlProvider locale="en" messages={{ en: {} }}>
+          <ConnectedLanguageProvider locale="en" messages={messages}>
+            <FormattedMessage {...messages.someText} />
+          </ConnectedLanguageProvider>
+        </IntlProvider>
+      </Provider>,
+      {},
     )
 
     expect(wrapper.contains(<FormattedMessage {...messages.someText} />)).toBe(true)
