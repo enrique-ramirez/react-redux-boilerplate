@@ -7,8 +7,8 @@ import { AppContainer } from 'react-hot-loader'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router/immutable'
 
-import App from 'modules/App'
-import LanguageProvider from 'modules/LanguageProvider'
+import App from 'containers/App'
+import LanguageProvider from 'containers/LanguageProvider'
 
 import configureStore from 'store/configureStore'
 
@@ -37,7 +37,7 @@ const render = (messages) => {
 render(translationMessages)
 
 if (module.hot) {
-  module.hot.accept('./modules/App', () => {
+  module.hot.accept('./containers/App', () => {
     ReactDOM.unmountComponentAtNode(MOUNT_NODE)
     render(translationMessages)
   })

@@ -2,7 +2,7 @@ import React from 'react'
 import { shallowWithIntl } from 'utils/intl-enzyme'
 import { fromJS } from 'immutable'
 
-import ToDos from 'modules/ToDos/view'
+import ToDos from 'containers/ToDos/view'
 
 describe('<ToDos />', () => {
   const initialState = fromJS({

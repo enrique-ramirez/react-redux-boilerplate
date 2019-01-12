@@ -4,7 +4,7 @@ import {
   Route,
 } from 'react-router-dom'
 
-import ToDos from 'modules/ToDos'
+import ToDos from 'containers/ToDos'
 
 import './styles.css'
 

@@ -6,7 +6,7 @@ import reducer, {
   changeLanguage,
   getSettings,
   makeGetLocale,
-} from 'modules/LanguageProvider/duck'
+} from 'containers/LanguageProvider/duck'
 
 describe('LanguageProvider duck', () => {
   beforeAll(() => {

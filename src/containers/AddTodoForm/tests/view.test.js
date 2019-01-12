@@ -2,7 +2,7 @@ import React from 'react'
 import { shallowWithIntl } from 'utils/intl-enzyme'
 import { Field } from 'redux-form/immutable'
 
-import AddTodoForm from 'modules/AddTodoForm/view'
+import AddTodoForm from 'containers/AddTodoForm/view'
 
 describe('<AddTodoForm />', () => {
   it('should render the addTodoForm', () => {

@@ -2,7 +2,7 @@ import * as matchers from 'jest-immutable-matchers'
 import { fromJS } from 'immutable'
 import createHistory from 'history/createBrowserHistory'
 
-import { ADD_TODO } from 'modules/ToDos/duck'
+import { ADD_TODO } from 'containers/ToDos/duck'
 import createRootReducer, { clearReduxForm } from 'store/reducer'
 
 describe('rootReducer', () => {

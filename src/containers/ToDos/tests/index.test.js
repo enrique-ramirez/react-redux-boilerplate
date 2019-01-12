@@ -6,8 +6,8 @@ import { mount } from 'enzyme'
 import { MemoryRouter } from 'react-router-dom'
 import { IntlProvider } from 'react-intl'
 
-import ConnectedToDos from 'modules/ToDos'
-import ToDos from 'modules/ToDos/view'
+import ConnectedToDos from 'containers/ToDos'
+import ToDos from 'containers/ToDos/view'
 
 describe('Connected <ToDos />', () => {
   const initialState = fromJS({

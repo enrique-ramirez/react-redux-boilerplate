@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import { defineMessages } from 'react-intl'
 
-import LanguageProvider from 'modules/LanguageProvider/view'
+import LanguageProvider from 'containers/LanguageProvider/view'
 import { DEFAULT_LOCALE } from 'store/constants'
 
 const messages = defineMessages({

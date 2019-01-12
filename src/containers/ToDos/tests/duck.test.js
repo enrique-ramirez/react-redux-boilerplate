@@ -17,7 +17,7 @@ import reducer, {
   loadTodosSaga,
   getTodos,
   makeGetTodos,
-} from 'modules/ToDos/duck'
+} from 'containers/ToDos/duck'
 
 describe('todos duck', () => {
   beforeAll(() => {
@@ -203,7 +203,6 @@ describe('todos duck', () => {
         }
         const callDescriptor = generator.next(response)
         const putDescriptor = generator.next(response).value
-
 
         expect(callDescriptor).toMatchSnapshot()
         // eslint-disable-next-line

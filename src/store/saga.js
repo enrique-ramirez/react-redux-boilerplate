@@ -1,5 +1,5 @@
 import { all } from 'redux-saga/effects'
-import { todosWatchers } from 'modules/ToDos/duck'
+import { todosWatchers } from 'containers/ToDos/duck'
 
 /* eslint-disable */
 export default function* rootSaga() {

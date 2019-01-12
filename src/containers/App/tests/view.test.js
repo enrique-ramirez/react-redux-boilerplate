@@ -2,7 +2,7 @@ import React from 'react'
 import configureStore from 'redux-mock-store'
 import { shallow } from 'enzyme'
 
-import App from 'modules/App'
+import App from 'containers/App'
 
 describe('<App />', () => {
   let mockStore

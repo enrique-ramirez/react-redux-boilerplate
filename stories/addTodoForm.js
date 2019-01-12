@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 
-import AddTodoForm from '../src/modules/AddTodoForm'
+import AddTodoForm from '../src/containers/AddTodoForm'
 
 const mockStore = configureStore([])
 

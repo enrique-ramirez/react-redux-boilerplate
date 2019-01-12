@@ -5,7 +5,7 @@ import { mount } from 'enzyme'
 import { fromJS } from 'immutable'
 import { IntlProvider, FormattedMessage, defineMessages } from 'react-intl'
 
-import ConnectedLanguageProvider from 'modules/LanguageProvider'
+import ConnectedLanguageProvider from 'containers/LanguageProvider'
 
 const messages = defineMessages({
   // This is a test text

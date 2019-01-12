@@ -4,8 +4,8 @@ import { combineReducers } from 'redux-immutable'
 import { Map, fromJS } from 'immutable'
 
 /* Resources reducers imports */
-import todos, { ADD_TODO } from 'modules/ToDos/duck'
-import languageProvider from 'modules/LanguageProvider/duck'
+import todos, { ADD_TODO } from 'containers/ToDos/duck'
+import languageProvider from 'containers/LanguageProvider/duck'
 
 /* Utils */
 export const clearReduxForm = state => (

@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet'
 import todoType from 'types/todo'
 import matchType from 'types/match'
 
-import AddTodoForm from 'modules/AddTodoForm'
+import AddTodoForm from 'containers/AddTodoForm'
 
 import MainNav from 'components/MainNav'
 import TodoList from 'components/TodoList'
