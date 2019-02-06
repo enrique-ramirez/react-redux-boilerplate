@@ -1,3 +1,4 @@
+import '@babel/polyfill'
 import 'raf/polyfill'
 
 import { configure } from 'enzyme'
