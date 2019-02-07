@@ -21,7 +21,7 @@
     "start:server": "node server.js",
     "lint": "eslint src/**/*.js && stylelint src/**/*.css",
     "precommit": "lint-staged",
-    "test": "jest",
+    "test": "jest --config=config/jest/jest.config.js",
     "test:watch": "npm run test --watch",
     "locales:extract": "babel-node ./scripts/translations/extract.js",
     "update-npm-versions": "npm-check --skip-unused --update"
@@ -54,8 +54,8 @@
     "immutable": "4.0.0-rc.12",
     "normalizr": "3.3.0",
     "prop-types": "15.6.2",
-    "react": "16.8.0",
-    "react-dom": "16.8.0",
+    "react": "16.8.1",
+    "react-dom": "16.8.1",
     "react-helmet": "5.2.0",
     "react-immutable-proptypes": "2.1.0",
     "react-intl": "2.8.0",
@@ -131,7 +131,7 @@
     "stylelint-declaration-block-no-ignored-properties": "1.1.0",
     "stylelint-order": "2.0.0",
     "uglifyjs-webpack-plugin": "2.1.1",
-    "webpack": "4.29.1",
+    "webpack": "4.29.3",
     "webpack-cli": "3.2.3",
     "webpack-dev-server": "3.1.14",
     "webpack-hot-middleware": "2.24.3"

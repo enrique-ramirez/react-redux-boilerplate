@@ -6,7 +6,7 @@ module.exports = {
     '!src/app.js',
     '!src/utils/intl-enzyme.js',
   ],
-  coverageDirectory: './coverage',
+  coverageDirectory: '<rootDir>/coverage',
   coverageThreshold: {
     global: {
       branches: 91,
@@ -20,6 +20,7 @@ module.exports = {
     '^.+\\.(css)$': 'identity-obj-proxy',
     '^.+\\.(jpg|jpeg|png|gif)$': '<rootDir>/config/mocks/fileMock.js',
   },
-  setupTestFrameworkScriptFile: './config/setupTests',
+  rootDir: '../../',
+  setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests'],
   verbose: true,
 }
