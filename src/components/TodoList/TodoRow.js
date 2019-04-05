@@ -44,6 +44,9 @@ class TodoRow extends React.Component {
         <Col xs={10}>
           <h1>{todo.get('title')}</h1>
           {todo.get('description')}
+          <strong className={styles.category}>
+            {todo.getIn(['category', 'name'])}
+          </strong>
         </Col>
 
         <Col className={styles.actions} xs={1}>

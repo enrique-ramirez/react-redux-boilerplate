@@ -2,8 +2,8 @@
 
 /** Typography variables */
 :root {
-  --fontFamily: Roboto, Arial, Helvetica, sans-serif;
-  --fontSize: 13px;
+  --fontFamily: Verdana, Helvetica, sans-serif;
+  --fontSize: 14px;
   --heading1Buff: 9px;
   --heading2Buff: 7px;
 }
