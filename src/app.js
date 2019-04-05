@@ -2,7 +2,7 @@ import '@babel/polyfill'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import createHistory from 'history/createBrowserHistory'
+import { createBrowserHistory } from 'history'
 import { AppContainer } from 'react-hot-loader'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router/immutable'
@@ -14,7 +14,7 @@ import configureStore from 'store/configureStore'
 
 import { translationMessages } from './i18n'
 
-const history = createHistory()
+const history = createBrowserHistory()
 const initialState = {}
 const store = configureStore(initialState, history)
 const MOUNT_NODE = document.getElementById('root')

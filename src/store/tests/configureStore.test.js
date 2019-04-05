@@ -1,11 +1,11 @@
 import configureStore from 'store/configureStore'
-import createHistory from 'history/createMemoryHistory'
+import { createMemoryHistory } from 'history'
 
 describe('configureStore', () => {
   let history
 
   beforeEach(() => {
-    history = createHistory()
+    history = createMemoryHistory()
   })
 
   it('should be able to create a store with initial state', () => {
