@@ -54,6 +54,7 @@ function Col(props) {
   const ComponentTag = tagName
 
   return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
     <ComponentTag className={classes} {...other}>
       {children}
     </ComponentTag>

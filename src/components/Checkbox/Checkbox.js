@@ -24,12 +24,14 @@ function Checkbox(props) {
 
   /** Return Checkbox */
   return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
     <label className={classes} {...other}>
       {labelPosition === 'left' && label}
       <span>
         <input
           disabled={isDisabled}
           type="checkbox"
+          // eslint-disable-next-line react/jsx-props-no-spreading
           {...input}
         />
         {input.checked && <Icon name="CHECK" size={12} />}

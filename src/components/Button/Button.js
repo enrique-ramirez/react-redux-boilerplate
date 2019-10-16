@@ -35,6 +35,7 @@ function Button(props) {
     <ComponentTag
       className={classes}
       href={href}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...other}
     >
       {children}

@@ -53,8 +53,12 @@
     "object-curly-newline": 0,
     "react/jsx-filename-extension": 0,
     "react/jsx-max-depth": 0,
+    "react/jsx-props-no-spreading": [2, {
+      "exceptions": ['FormattedMessage']
+    }],
     "react/jsx-one-expression-per-line": 0,
     "react/require-default-props": 0,
+    "react/static-property-placement": 0,
     "semi": [2, "never"]
   },
   "settings": {

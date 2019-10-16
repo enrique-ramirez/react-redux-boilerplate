@@ -22,6 +22,7 @@ function Icon(props) {
       height={size}
       viewBox="0 0 512 512"
       width={size}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...other}
     >
       <path d={SVGIcons[`WICON_${name}`]} />

@@ -36,6 +36,7 @@ function Input(props) {
 
   /** Return input */
   return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
     <span className={wrapperClasses} {...other}>
       <input
         className={classes}
@@ -43,16 +44,18 @@ function Input(props) {
         disabled={isDisabled}
         placeholder={placeholder}
         type={type}
+        // eslint-disable-next-line react/jsx-props-no-spreading
         {...input}
       />
-      {meta.touched && meta.error
-        ? (
-          <em className={errorClasses}>
-            <Icon name="ALERT" />
-            {meta.error}
-          </em>
-        )
-        : null
+      {
+        meta.touched && meta.error
+          ? (
+            <em className={errorClasses}>
+              <Icon name="ALERT" />
+              {meta.error}
+            </em>
+          )
+          : null
       }
     </span>
   )

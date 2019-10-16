@@ -18,21 +18,24 @@ function MainNav(props) {
     <Container isFluid>
       <Row className={styles.mainNav} middle="xs" start="xs" tagName="ul" top="xs">
         <Col tagName="li" xs={4}>
-          {filter === undefined
-            ? <FormattedMessage {...messages.all} tagName="strong" />
-            : <Link to="/"><FormattedMessage {...messages.all} /></Link>
+          {
+            filter === undefined
+              ? <FormattedMessage {...messages.all} tagName="strong" />
+              : <Link to="/"><FormattedMessage {...messages.all} /></Link>
           }
         </Col>
         <Col tagName="li" xs={4}>
-          {filter === 'active'
-            ? <FormattedMessage {...messages.active} tagName="strong" />
-            : <Link to="/active"><FormattedMessage {...messages.active} /></Link>
+          {
+            filter === 'active'
+              ? <FormattedMessage {...messages.active} tagName="strong" />
+              : <Link to="/active"><FormattedMessage {...messages.active} /></Link>
           }
         </Col>
         <Col tagName="li" xs={4}>
-          {filter === 'done'
-            ? <FormattedMessage {...messages.done} tagName="strong" />
-            : <Link to="/done"><FormattedMessage {...messages.done} /></Link>
+          {
+            filter === 'done'
+              ? <FormattedMessage {...messages.done} tagName="strong" />
+              : <Link to="/done"><FormattedMessage {...messages.done} /></Link>
           }
         </Col>
       </Row>
