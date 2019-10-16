@@ -14,7 +14,7 @@ const { intl: { formatMessage } } = new IntlProvider({
 const getNumber = value => (isNaN(value) ? null : parseInt(value, 10))
 const getString = value => (typeof value === 'string' ? value : '')
 
-const memoize = (fn) => {
+const memoize = fn => {
   const cache = {}
 
   return (...args) => {
@@ -40,7 +40,7 @@ export const length = memoize((options = {}) => {
   max = getNumber(max)
   exact = getNumber(exact)
 
-  return (value) => {
+  return value => {
     if (!value) { return undefined }
 
     if (exact !== null && value.length !== exact) {
@@ -59,15 +59,15 @@ export const length = memoize((options = {}) => {
   }
 })
 
-export const email = memoize(() => (value) => {
+export const email = memoize(() => value => {
   const regex = /^([^@:\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
   return regex.test(value) ? undefined : formatMessage(messages.emailError)
 })
 
-export const makeValidate = validations => (values) => {
+export const makeValidate = validations => values => {
   const errors = {}
 
-  Object.keys(validations).forEach((field) => {
+  Object.keys(validations).forEach(field => {
     const value = values.get(field)
 
     errors[field] = validations[field]
