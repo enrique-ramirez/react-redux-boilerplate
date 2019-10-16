@@ -62,7 +62,6 @@ const localeFileContents = defaultMessages.reduce((locales, messages) => {
   return locales
 }, {})
 
-
 // Write file to disk
 fs.writeFile(`./locales/${DEFAULT_LOCALE}.json`, JSON.stringify(localeFileContents), 'utf8', (err) => {
   if (err) { return console.log(err) }
