@@ -16,7 +16,7 @@ import messages from './messages'
 
 // eslint-disable-next-line react/prefer-stateless-function
 class ToDos extends React.Component {
-  componentWillMount() {
+  componentDidMount() {
     const { requestTodos } = this.props
 
     requestTodos()
@@ -38,10 +38,6 @@ class ToDos extends React.Component {
       todos,
     } = this.props
 
-    function onSubmit(vals) {
-      handleSubmit(vals)
-    }
-
     const title = 'Todos list'
 
     return (
@@ -52,7 +48,7 @@ class ToDos extends React.Component {
 
         <MainNav filter={params.filter} />
 
-        <AddTodoForm onSubmit={onSubmit} />
+        <AddTodoForm onSubmit={handleSubmit} />
 
         <TodoList
           handleComplete={handleComplete}

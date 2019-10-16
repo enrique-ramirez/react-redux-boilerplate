@@ -18,10 +18,11 @@ describe('<ToDos />', () => {
 
   it('should render <TodoList />', () => {
     const noop = jest.fn()
+    const handleSubmit = jest.fn()
     const wrapper = shallowWithIntl(<ToDos
       handleComplete={noop}
       handleDelete={noop}
-      handleSubmit={noop}
+      handleSubmit={handleSubmit}
       requestTodos={noop}
       todos={initialState.getIn(['resources', 'todos'])}
     />)
@@ -56,5 +57,20 @@ describe('<ToDos />', () => {
 
     expect(shouldUpdate).toBe(true)
     expect(shouldNotUpdate).toBe(false)
+  })
+
+  it('should call requestTodos once mounted', () => {
+    const noop = jest.fn()
+    const requestTodos = jest.fn()
+
+    shallowWithIntl(<ToDos
+      handleComplete={noop}
+      handleDelete={noop}
+      handleSubmit={noop}
+      requestTodos={requestTodos}
+      todos={fromJS([])}
+    />)
+
+    expect(requestTodos).toHaveBeenCalledTimes(1)
   })
 })
