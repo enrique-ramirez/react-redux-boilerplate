@@ -20,8 +20,6 @@
     "start:storybook": "start-storybook -p 9001 -c .storybook",
     "start:server": "node server.js",
     "lint": "eslint src/**/*.js && stylelint src/**/*.css",
-    "precommit": "lint-staged",
-    "prepush": "npm run lint && npm run test",
     "test": "jest --config=config/jest/jest.config.js",
     "test:watch": "npm run test --watch",
     "locales:extract": "babel-node ./scripts/translations/extract.js",
