@@ -21,7 +21,7 @@
     "start:server": "node server.js",
     "lint": "eslint src/**/*.js && stylelint src/**/*.css",
     "precommit": "lint-staged",
-    "prepush": "lint-staged && test",
+    "prepush": "lint && test",
     "test": "jest --config=config/jest/jest.config.js",
     "test:watch": "npm run test --watch",
     "locales:extract": "babel-node ./scripts/translations/extract.js",
