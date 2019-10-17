@@ -1,4 +1,3 @@
-import { injectIntl } from 'react-intl'
 import { reduxForm } from 'redux-form/immutable'
 
 import {
@@ -17,4 +16,4 @@ const validations = {
 export default reduxForm({
   form: 'addTodo',
   validate: makeValidate(validations),
-})(injectIntl(AddTodoForm))
+})(AddTodoForm)

@@ -23,7 +23,7 @@ function TodoList(props) {
   return (
     <Container isFluid>
       <ul className={classes}>
-        {todos.map((todo) => {
+        {todos.map(todo => {
           const id = Map({ id: todo.get('id') })
           const _handleComplete = () => handleComplete(id)
           const _handleDelete = () => handleDelete(id)

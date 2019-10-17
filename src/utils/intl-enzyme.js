@@ -10,36 +10,31 @@
  * English-locale intl context around them.
  */
 
-import React from 'react'
-import { IntlProvider, intlShape } from 'react-intl'
+import { IntlProvider, IntlShape } from 'react-intl'
 import { mount, shallow } from 'enzyme'
 
 import en from '../i18n'
 
-// Create the IntlProvider to retrieve context for wrapping around.
-const intlProvider = new IntlProvider({
-  locale: 'en',
-  messages: en,
-}, {})
-
-const { intl } = intlProvider.getChildContext()
-
-/**
- * When using React-Intl `injectIntl` on components, props.intl is required.
- */
-function nodeWithIntlProp(node) {
-  return React.cloneElement(node, { intl })
-}
-
 export function shallowWithIntl(node) {
-  return shallow(nodeWithIntlProp(node), {
-    context: { intl },
+  return shallow(node, {
+    wrappingComponent: IntlProvider,
+    wrappingComponentProps: {
+      locale: 'en',
+      defaultLocale: 'en',
+      messages: en,
+    },
+    intl: IntlShape,
   })
 }
 
 export function mountWithIntl(node) {
-  return mount(nodeWithIntlProp(node), {
-    context: { intl },
-    childContextTypes: { intl: intlShape },
+  return mount(node, {
+    wrappingComponent: IntlProvider,
+    wrappingComponentProps: {
+      locale: 'en',
+      defaultLocale: 'en',
+      messages: en,
+    },
+    intl: IntlShape,
   })
 }

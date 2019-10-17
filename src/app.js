@@ -19,7 +19,7 @@ const initialState = {}
 const store = configureStore(initialState, history)
 const MOUNT_NODE = document.getElementById('root')
 
-const render = (messages) => {
+const render = messages => {
   ReactDOM.render(
     <AppContainer>
       <Provider store={store}>

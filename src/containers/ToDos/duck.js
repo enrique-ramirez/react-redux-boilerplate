@@ -42,7 +42,7 @@ const reducer = handleActions({
 export default reducer
 
 /* Selectors */
-export const getTodos = (state) => {
+export const getTodos = state => {
   // eslint-disable-next-line reselect/first-param-name
   const todosWithEntities = state.reduce((aggr, value, key) => {
     let result = aggr

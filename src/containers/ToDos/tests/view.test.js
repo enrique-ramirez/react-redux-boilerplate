@@ -1,8 +1,15 @@
 import React from 'react'
+import { createIntl, createIntlCache } from 'react-intl'
 import { shallowWithIntl } from 'utils/intl-enzyme'
 import { fromJS } from 'immutable'
 
 import ToDos from 'containers/ToDos/view'
+
+const cache = createIntlCache()
+const intl = createIntl({
+  locale: 'en',
+  messages: {},
+}, cache)
 
 describe('<ToDos />', () => {
   const initialState = fromJS({
@@ -23,6 +30,7 @@ describe('<ToDos />', () => {
       handleComplete={noop}
       handleDelete={noop}
       handleSubmit={handleSubmit}
+      intl={intl}
       requestTodos={noop}
       todos={initialState.getIn(['resources', 'todos'])}
     />)
@@ -36,6 +44,7 @@ describe('<ToDos />', () => {
       handleComplete={noop}
       handleDelete={noop}
       handleSubmit={noop}
+      intl={intl}
       requestTodos={noop}
       todos={initialState.getIn(['resources', 'todos'])}
     />)
@@ -49,6 +58,7 @@ describe('<ToDos />', () => {
       handleComplete={noop}
       handleDelete={noop}
       handleSubmit={noop}
+      intl={intl}
       requestTodos={noop}
       todos={fromJS([])}
     />)
@@ -67,6 +77,7 @@ describe('<ToDos />', () => {
       handleComplete={noop}
       handleDelete={noop}
       handleSubmit={noop}
+      intl={intl}
       requestTodos={requestTodos}
       todos={fromJS([])}
     />)

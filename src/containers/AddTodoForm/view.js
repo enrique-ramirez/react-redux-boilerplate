@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, useIntl } from 'react-intl'
 import { Field } from 'redux-form/immutable'
 import PropTypes from 'prop-types'
 import {
@@ -13,7 +13,9 @@ import Button from 'components/Button'
 import styles from './styles.css'
 import messages from './messages'
 
-function AddTodoForm({ handleSubmit, intl }) {
+function AddTodoForm({ handleSubmit }) {
+  const intl = useIntl()
+
   return (
     <Container isFluid>
       <form onSubmit={handleSubmit}>

@@ -2,10 +2,6 @@
  * Most of the code taken from react-boilerplate:
  * https://github.com/react-boilerplate/react-boilerplate/blob/master/app/i18n.js
  */
-import { addLocaleData } from 'react-intl'
-import enLocaleData from 'react-intl/locale-data/en'
-import esLocaleData from 'react-intl/locale-data/es'
-
 import { DEFAULT_LOCALE } from 'store/constants'
 
 import enTranslationMessages from '../locales/en.json'
@@ -15,9 +11,6 @@ const messagesMap = {
   en: enTranslationMessages,
   es: esTranslationMessages,
 }
-
-addLocaleData(enLocaleData)
-addLocaleData(esLocaleData)
 
 export const appLocales = [
   'en',
