@@ -16,7 +16,8 @@
     "react",
     "redux-saga",
     "reselect",
-    "jest"
+    "jest",
+    "react-hooks"
   ],
   "rules": {
     "arrow-parens": [2, "as-needed"],
@@ -52,6 +53,8 @@
     }],
     "no-underscore-dangle": 0,
     "object-curly-newline": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
     "react/jsx-filename-extension": 0,
     "react/jsx-max-depth": 0,
     "react/jsx-props-no-spreading": [2, {
