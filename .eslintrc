@@ -17,11 +17,13 @@
     "redux-saga",
     "reselect",
     "jest",
-    "react-hooks"
+    "react-hooks",
+    "formatjs"
   ],
   "rules": {
     "arrow-parens": [2, "as-needed"],
     "arrow-body-style": ["error", "as-needed"],
+    "formatjs/enforce-description": 1,
     "function-paren-newline": ["error", "multiline"],
     "import/named": 2,
     "import/no-extraneous-dependencies": ["error", {

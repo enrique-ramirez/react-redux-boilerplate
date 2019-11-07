@@ -9,8 +9,7 @@
     }],
     "react-intl-id-hash",
     ["react-intl", {
-      "messagesDir": ".extractedMessages",
-      "enforceDescriptions": true
+      "messagesDir": ".extractedMessages"
     }]
   ],
   "minified": false,
