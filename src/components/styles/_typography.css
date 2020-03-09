@@ -2,7 +2,7 @@
 
 /** Typography variables */
 :root {
-  --fontFamily: Verdana, Helvetica, sans-serif;
+  --fontFamily: verdana, helvetica, sans-serif;
   --fontSize: 14px;
   --heading1Buff: 9px;
   --heading2Buff: 7px;

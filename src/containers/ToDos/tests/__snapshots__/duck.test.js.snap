@@ -23,6 +23,7 @@ Object {
     "args": Array [
       undefined,
       EntitySchema {
+        "_fallbackStrategy": [Function],
         "_getId": [Function],
         "_idAttribute": "id",
         "_key": "todos",
@@ -30,6 +31,7 @@ Object {
         "_processStrategy": [Function],
         "schema": Object {
           "category": EntitySchema {
+            "_fallbackStrategy": [Function],
             "_getId": [Function],
             "_idAttribute": "id",
             "_key": "categories",
@@ -81,6 +83,7 @@ Object {
         ],
       },
       EntitySchema {
+        "_fallbackStrategy": [Function],
         "_getId": [Function],
         "_idAttribute": "id",
         "_key": "todos",
@@ -88,6 +91,7 @@ Object {
         "_processStrategy": [Function],
         "schema": Object {
           "category": EntitySchema {
+            "_fallbackStrategy": [Function],
             "_getId": [Function],
             "_idAttribute": "id",
             "_key": "categories",
@@ -156,6 +160,7 @@ Object {
           ],
         },
         EntitySchema {
+          "_fallbackStrategy": [Function],
           "_getId": [Function],
           "_idAttribute": "id",
           "_key": "todos",
@@ -163,6 +168,7 @@ Object {
           "_processStrategy": [Function],
           "schema": Object {
             "category": EntitySchema {
+              "_fallbackStrategy": [Function],
               "_getId": [Function],
               "_idAttribute": "id",
               "_key": "categories",
@@ -261,6 +267,7 @@ Object {
         },
         Array [
           EntitySchema {
+            "_fallbackStrategy": [Function],
             "_getId": [Function],
             "_idAttribute": "id",
             "_key": "todos",
@@ -268,6 +275,7 @@ Object {
             "_processStrategy": [Function],
             "schema": Object {
               "category": EntitySchema {
+                "_fallbackStrategy": [Function],
                 "_getId": [Function],
                 "_idAttribute": "id",
                 "_key": "categories",
